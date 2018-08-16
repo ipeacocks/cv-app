@@ -42,4 +42,4 @@ alb_hostname = cv-app-1335227840.us-east-1.elb.amazonaws.com
 bastion-eip = 18.214.147.223
 
 ```
-First one is web link for the app, second one - address to ssh host of newly created VPC.
+First one is web link for the app, second one - address to ssh host to newly created VPC.
