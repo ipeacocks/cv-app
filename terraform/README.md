@@ -34,4 +34,12 @@ $ terraform init
 $ terraform plan
 $ terraform apply
 ```
-Main variables are described in `vars.tf`.
+Main variables are described in `vars.tf`. After applying terraform will output 2 addresses like:
+```
+Outputs:
+
+alb_hostname = cv-app-1335227840.us-east-1.elb.amazonaws.com
+bastion-eip = 18.214.147.223
+
+```
+First one is web link for the app, second one - address to ssh host of newly created VPC.
