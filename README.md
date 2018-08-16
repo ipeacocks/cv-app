@@ -6,5 +6,5 @@ In these folders you can find all needed files and instructions for deploying CV
 * `app` - CV app (Flask/Bootstrap 4)
 
 <p align="center">
-  <img src="screenshots/cv-app.png" />
+  <img src="app/screenshots/cv-app.png" />
 </p>
