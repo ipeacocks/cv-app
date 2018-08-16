@@ -1,4 +1,4 @@
-# CV app
+## CV app
 
 This directory contains simple CV app.
 
@@ -11,8 +11,6 @@ Written on:
 * MariaDB
 
 ## Local Installation
-
-### Prerequirements.
 
 Install MariaDB:
 ```
