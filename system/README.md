@@ -1,1 +1,1 @@
-### some other OS's stuff
+### Some other OS's stuff
