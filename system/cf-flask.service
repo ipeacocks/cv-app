@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve cv-flask
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/cv-flask/project
+Environment="PATH=/home/ubuntu/cv-flask/cv-flask-env/bin"
+ExecStart=/home/ubuntu/cv-flask/cv-flask-env/bin/uwsgi --ini cv-flask.ini
+
+[Install]
+WantedBy=multi-user.target
