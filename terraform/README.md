@@ -28,6 +28,7 @@ $ aws dynamodb create-table \
       --key-schema AttributeName=LockID,KeyType=HASH \
       --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 ```
+`aws-cli` needs to be configured and installed.    
 Now you are ready to start:
 ```
 $ terraform init
