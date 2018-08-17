@@ -51,7 +51,6 @@ resource "aws_security_group" "alb-cv-app" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-
   }
 
   tags {
@@ -68,9 +67,9 @@ resource "aws_security_group" "cv-nginx" {
   vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
-    protocol  = "tcp"
-    from_port = "${var.cv_nginx_port}"
-    to_port   = "${var.cv_nginx_port}"
+    protocol        = "tcp"
+    from_port       = "${var.cv_nginx_port}"
+    to_port         = "${var.cv_nginx_port}"
     security_groups = ["${aws_security_group.alb-cv-app.id}"]
   }
 
@@ -93,9 +92,9 @@ resource "aws_security_group" "cv-mariadb" {
   vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
-    protocol  = "tcp"
-    from_port = "${var.cv_mariadb_port}"
-    to_port   = "${var.cv_mariadb_port}"
+    protocol        = "tcp"
+    from_port       = "${var.cv_mariadb_port}"
+    to_port         = "${var.cv_mariadb_port}"
     security_groups = ["${aws_security_group.cv-uwsgi.id}"]
   }
 
@@ -118,9 +117,9 @@ resource "aws_security_group" "cv-uwsgi" {
   vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
-    protocol  = "tcp"
-    from_port = "${var.cv_uwsgi_port}"
-    to_port   = "${var.cv_uwsgi_port}"
+    protocol        = "tcp"
+    from_port       = "${var.cv_uwsgi_port}"
+    to_port         = "${var.cv_uwsgi_port}"
     security_groups = ["${aws_security_group.cv-nginx.id}"]
   }
 

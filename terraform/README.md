@@ -1,12 +1,15 @@
 ## Terraform
 
 These templates create:
+* 2 AZs
 * VPC
 * 2 subnets: private and public
 * 1 bastion (ssh) host inside private subnet
 * ECS Fargate cluster
 * 3 tasks/services for ECS: `cv-nginx`, `cv-uwsgi` (python flask app), `cv-mariadb`
 * ALB balancer for cv-nginx containers
+
+To achieve the minimal amount of High Availability, we need to deploy our ECS cluster to run on at least 2 Availability Zones (AZs). The ALB balancer also needs at least 2 public subnets in different AZs.
 
 Services find each other using AWS service discovering for ECS.
 
