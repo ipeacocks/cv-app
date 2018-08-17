@@ -1,5 +1,3 @@
-### ECS Services
-
 resource "aws_ecs_service" "cv-nginx" {
   name            = "cv-nginx"
   cluster         = "${aws_ecs_cluster.cv-cluster.id}"

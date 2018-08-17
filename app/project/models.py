@@ -33,18 +33,18 @@ class Knowledge(db.Model):
         self.knowledge = knowledge
 
 
-class Expirience(db.Model):
+class Experience(db.Model):
 
-    __tablename__ = "expirience"
+    __tablename__ = "experience"
 
-    expirience_id = db.Column(db.Integer, primary_key=True)
+    experience_id = db.Column(db.Integer, primary_key=True)
     position = db.Column(db.String(100), nullable=False)
     time = db.Column(db.String(32), nullable=False)
     site = db.Column(db.String(64), nullable=False)
-    expirience = db.Column(db.String(1000), nullable=False)
+    experience = db.Column(db.String(1000), nullable=False)
 
-    def __init__(self, position, time, site, expirience):
+    def __init__(self, position, time, site, experience):
         self.position = position
         self.time = time
         self.site = site
-        self.expirience = expirience
+        self.experience = experience

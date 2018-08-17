@@ -1,5 +1,3 @@
-### ALB
-
 resource "aws_alb" "cv-app" {
   name            = "cv-app"
   subnets         = ["${aws_subnet.public.*.id}"]

@@ -1,5 +1,3 @@
-### Network
-
 # Fetch AZs in the current region
 data "aws_availability_zones" "available" {}
 
@@ -23,7 +21,7 @@ resource "aws_subnet" "private" {
   vpc_id            = "${aws_vpc.vpc.id}"
 
   tags {
-    Name      = "private-subnet-${count.index}"
+    Name      = "private-${count.index}"
     Terraform = 1
   }
 }
@@ -37,60 +35,55 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags {
-    Name      = "public-subnet-${count.index}"
+    Name      = "public-${count.index}"
     Terraform = 1
   }
 }
 
-# IGW for the public subnet
 resource "aws_internet_gateway" "internet-gw" {
   vpc_id = "${aws_vpc.vpc.id}"
 
   tags {
-    Name      = "internet-gateway"
+    Name      = "internet-gw"
     Terraform = 1
   }
 }
 
-# Route the public subnet traffic through the IGW
 resource "aws_route" "route-to-internet-gw" {
   route_table_id         = "${aws_vpc.vpc.main_route_table_id}"
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = "${aws_internet_gateway.internet-gw.id}"
 }
 
-# Create a NAT gateway with an EIP for each private subnet to get internet connectivity
-resource "aws_eip" "private-nat" {
+resource "aws_eip" "nat-gw" {
   count      = "${var.az_count}"
   vpc        = true
   depends_on = ["aws_internet_gateway.internet-gw"]
 
   tags {
-    Name      = "private-nat-${count.index}"
+    Name      = "nat-gw-${count.index}"
     Terraform = 1
   }
 }
 
-resource "aws_nat_gateway" "private" {
+resource "aws_nat_gateway" "nat-gw" {
   count         = "${var.az_count}"
   subnet_id     = "${element(aws_subnet.public.*.id, count.index)}"
-  allocation_id = "${element(aws_eip.private-nat.*.id, count.index)}"
+  allocation_id = "${element(aws_eip.nat-gw.*.id, count.index)}"
 
   tags {
-    Name      = "private-${count.index}"
+    Name      = "nat-gw-${count.index}"
     Terraform = 1
   }
 }
 
-# Create a new route table for the private subnets
-# And make it route non-local traffic through the NAT gateway to the internet
 resource "aws_route_table" "private" {
   count  = "${var.az_count}"
   vpc_id = "${aws_vpc.vpc.id}"
 
   route {
     cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = "${element(aws_nat_gateway.private.*.id, count.index)}"
+    nat_gateway_id = "${element(aws_nat_gateway.nat-gw.*.id, count.index)}"
   }
 
   tags {
@@ -99,7 +92,6 @@ resource "aws_route_table" "private" {
   }
 }
 
-# Explicitely associate the newly created route tables to the private subnets
 resource "aws_route_table_association" "private-subnet-associations" {
   count          = "${var.az_count}"
   subnet_id      = "${element(aws_subnet.private.*.id, count.index)}"

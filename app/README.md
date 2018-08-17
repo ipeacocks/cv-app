@@ -39,12 +39,18 @@ Activate virtual env:
 ```
 $ source env/bin/activate
 ```
-Make sure that virtualenv created env with `python3`.    
+**Make sure that virtualenv created env with `python3`.**    
 That's almost it. Use `requirements.txt` to setup all python dependencies:
 ```
 $ pip install -r project/requirements.txt
 ```
-Change MySQL address (uncomment `HOST='127.0.0.1'` parameter and remove old one) in `project/_config.py` and upload db data:
+Point `cv-mariadb.my-zone` to `127.0.0.1` in `/etc/hosts`:
+```
+$ cat /etc/hosts
+...
+127.0.0.1       localhost cv-mariadb.my-zone
+```
+Create new user/db and import basic data:
 ```
 $ python project/db_create.py
 ```
@@ -55,7 +61,7 @@ $ python project/run.py
 `project/db_create.py` file uses SQLAlchemy library for data populating of DB. So you can add new data there, launch this script for uploading it to MySQL and after you have to upload new dump to `../docker/mariadb/sqls/populate_data.sql`:
 ```
 $ python project/db_create.py
-$ mysqldump -umy_cv_user -pmy-secret-pw -B my_cv_db -h127.0.0.1  > ../docker/mariadb/sqls/populate_data.sql
+$ mysqldump -umy_cv_user -pmy-secret-pw -B my_cv_db -h127.0.0.1 > ../docker/mariadb/sqls/populate_data.sql
 ```
 Then rebuild and push newer image from root directory of this repo:
 ```

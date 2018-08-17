@@ -4,7 +4,7 @@ Login to Docker Hub:
 ```
 $ sudo docker login
 ```
-Go to root dir of this repo, build and push images to Docker Hub:
+Go to root dir of this repo, build and push (if needed) images to Docker Hub:
 ```
 $ sudo docker build -t cv-mariadb -f docker/mariadb/Dockerfile .
 $ sudo docker tag cv-mariadb your_account/cv-mariadb

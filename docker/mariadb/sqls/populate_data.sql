@@ -24,30 +24,30 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `my_cv_db` /*!40100 DEFAULT CHARACTER S
 USE `my_cv_db`;
 
 --
--- Table structure for table `expirience`
+-- Table structure for table `experience`
 --
 
-DROP TABLE IF EXISTS `expirience`;
+DROP TABLE IF EXISTS `experience`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `expirience` (
-  `expirience_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `experience` (
+  `experience_id` int(11) NOT NULL AUTO_INCREMENT,
   `position` varchar(100) NOT NULL,
   `time` varchar(32) NOT NULL,
   `site` varchar(64) NOT NULL,
-  `expirience` varchar(1000) NOT NULL,
-  PRIMARY KEY (`expirience_id`)
+  `experience` varchar(1000) NOT NULL,
+  PRIMARY KEY (`experience_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `expirience`
+-- Dumping data for table `experience`
 --
 
-LOCK TABLES `expirience` WRITE;
-/*!40000 ALTER TABLE `expirience` DISABLE KEYS */;
-INSERT INTO `expirience` VALUES (1,'Devops at Kaaiot','February 2017 - Present','https://kaaiot.io','Installation/configuration/support of Kubernetes Clusters (AWS/Bare-metal); AWS network designing with Terraform;Containerization of services with Docker; Writing Ansible code for automatic deployment of OpenLDAP/Jenkins/GitLab servers; CI/CD work with Jenkins (Groovy pipelines);Backup automatization with Python (boto + AWS Lambda)'),(2,'SRE / DevOps at Playtech','February 2017 - February 2018','https://playtech.com','Working on migration of company\'s clients from Cloud Foundry DEA to Diego; Writing Ansible code for automatic deployment of Cloud Foundry; Configuring monitoring for already working instances;Migration to OpenShift (RedHat Kubernetes distro);Support developers in their activities, daily tasks');
-/*!40000 ALTER TABLE `expirience` ENABLE KEYS */;
+LOCK TABLES `experience` WRITE;
+/*!40000 ALTER TABLE `experience` DISABLE KEYS */;
+INSERT INTO `experience` VALUES (1,'Devops at Kaaiot','February 2017 - Present','https://kaaiot.io','Installation/configuration/support of Kubernetes Clusters (AWS/Bare-metal); AWS network designing with Terraform;Containerization of services with Docker; Writing Ansible code for automatic deployment of OpenLDAP/Jenkins/GitLab servers; CI/CD work with Jenkins (Groovy pipelines);Backup automatization with Python (boto + AWS Lambda)'),(2,'SRE / DevOps at Playtech','February 2017 - February 2018','https://playtech.com','Working on migration of company\'s clients from Cloud Foundry DEA to Diego; Writing Ansible code for automatic deployment of Cloud Foundry; Configuring monitoring for already working instances;Migration to OpenShift (RedHat Kubernetes distro);Support developers in their activities, daily tasks');
+/*!40000 ALTER TABLE `experience` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -116,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-16 23:22:43
+-- Dump completed on 2018-08-18  1:29:39

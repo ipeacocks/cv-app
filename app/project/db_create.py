@@ -1,7 +1,7 @@
 # db_create.py
 
 from main import db
-from models import User, Knowledge, Expirience
+from models import User, Knowledge, Experience
 
 
 db.create_all()
@@ -46,7 +46,7 @@ for skill in skills:
 
 
 db.session.add(
-    Expirience(
+    Experience(
         "Devops at Kaaiot",
         "February 2017 - Present",
         "https://kaaiot.io",
@@ -60,7 +60,7 @@ db.session.add(
 )
 
 db.session.add(
-    Expirience(
+    Experience(
         "SRE / DevOps at Playtech",
         "February 2017 - February 2018",
         "https://playtech.com",

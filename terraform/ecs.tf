@@ -1,5 +1,3 @@
-### ECS Cluster
-
 resource "aws_ecs_cluster" "cv-cluster" {
   name = "cv-cluster"
 }

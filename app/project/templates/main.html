@@ -31,26 +31,22 @@
             <div class="card-body col-md-4">
               <table class="table table-sm">
                 <tbody>
-                  <table class="table table-sm">
-                    <tbody>
-                      <tr>
-                        <td><b>Phone:</b></td>
-                        <td>{{ personal_info[0].phone }}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Skype:</b></td>
-                        <td>{{ personal_info[0].skype }}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Email:</b></td>
-                        <td>{{ personal_info[0].email }}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Address:</b></td>
-                        <td>{{ personal_info[0].address }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <tr>
+                    <td><b>Phone:</b></td>
+                    <td>{{ personal_info[0].phone }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Skype:</b></td>
+                    <td>{{ personal_info[0].skype }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Email:</b></td>
+                    <td>{{ personal_info[0].email }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Address:</b></td>
+                    <td>{{ personal_info[0].address }}</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -76,18 +72,18 @@
         <div class="col-md-6">
           <div class="card bg-light mb-3">
             <div class="card-header">
-              Expirience
+              Experience
             </div>
             <div class="card-body">
               <ul class="list-unstyled mt-3 mb-4">
-                {% for work in expirience %}
+                {% for work in experience %}
                   <li><b>{{ work.position }}</b></li>
                   <li class="text-muted">{{ work.time }}</li>
                   <li><a href="{{ work.site }}">{{ work.site }}</a></li>
                   <li><br></li>
-                  {% set expirience_list = work.expirience.split(';') %}
-                    {% for expirience in expirience_list %}
-                    <li>&#9642; {{ expirience }}</li>
+                  {% set experience_list = work.experience.split(';') %}
+                    {% for experience in experience_list %}
+                    <li>&#9642; {{ experience }}</li>
                     {% endfor %}
                   <li><br></li>
                 {% endfor %}
@@ -97,6 +93,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
