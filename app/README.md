@@ -74,5 +74,3 @@ Recreate `cv-mariadb` AWS service from console.
 **Probably useful links:**    
 https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-16-04    
 https://stackoverflow.com/questions/27766794/switching-from-sqlite-to-mysql-with-flask-sqlalchemy    
-https://medium.com/@greut/minimal-python-deployment-on-docker-with-uwsgi-bc5aa89b3d35    
-
