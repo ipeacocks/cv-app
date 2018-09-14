@@ -52,3 +52,5 @@ First one is web link for the app, second one - address to ssh host to newly cre
 https://medium.com/containers-on-aws/how-to-setup-service-discovery-in-elastic-container-service-3d18479959e6    
 https://blog.oxalide.io/post/aws-fargate/    
 https://github.com/Oxalide/terraform-fargate-example    
+http://fedulov.website/2018/02/18/terraform-deploying-containers-on-aws-fargate/    
+https://medium.com/@bradford_hamilton/deploying-containers-on-amazons-ecs-using-fargate-and-terraform-part-1-a5ab1f79cb21    
