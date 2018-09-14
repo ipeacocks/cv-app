@@ -26,3 +26,6 @@ All prebuilt images you can find there:
 https://hub.docker.com/r/ipeacocks/cv-mariadb/    
 https://hub.docker.com/r/ipeacocks/cv-uwsgi/    
 https://hub.docker.com/r/ipeacocks/cv-nginx/    
+
+**Probably useful links:**    
+https://medium.com/@greut/minimal-python-deployment-on-docker-with-uwsgi-bc5aa89b3d35    
