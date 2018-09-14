@@ -48,7 +48,7 @@ bastion-eip = 18.214.147.223
 ```
 First one is web link for the app, second one - address to ssh host to newly created VPC.
 
-Probably useful links:
+**Probably useful links:**    
 https://medium.com/containers-on-aws/how-to-setup-service-discovery-in-elastic-container-service-3d18479959e6    
 https://blog.oxalide.io/post/aws-fargate/    
 https://github.com/Oxalide/terraform-fargate-example    
