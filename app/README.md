@@ -1,6 +1,6 @@
 ## CV app
 
-This directory contains simple CV app.
+This directory contains one-page CV app.
 
 Written on:
 
